@@ -33,9 +33,12 @@ ENV \
     JULIA_CPU_TARGET="generic;sandybridge,-xsaveopt,clone_all;haswell,-rdrnd,base(1);x86-64-v4,-rdrnd,base(1)"
 
 RUN true\
+    && mkdir /opt/julia-local \
     && provisioning/install-julia.sh 1.11.5 /opt/julia-1.11 \
+    && (cd /opt/julia-1.11 && ln -s ../julia-local local) \
     && (cd /opt/julia-1.11/bin && ln -s julia julia-1.11) \
     && provisioning/install-julia.sh 1.12.0-beta3 /opt/julia-1.12 \
+    && (cd /opt/julia-1.12 && ln -s ../julia-local local) \
     && (cd /opt/julia-1.12/bin && ln -s julia julia-1.12) \
     && (cd /opt && ln -s julia-1.11 julia)
 
