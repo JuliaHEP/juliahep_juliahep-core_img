@@ -42,6 +42,13 @@ RUN true\
     && (cd /opt && ln -s julia-1.11 julia)
 
 
+# Set up unpacked directory:
+COPY provisioning/unpacked/ /unpacked/
+RUN true \
+    chmod 644 /unpacked/*.sh /unpacked/image-name \
+    chmod 755 /unpacked/bin/*
+
+
 # Clean up:
 
 RUN true \
