@@ -29,8 +29,7 @@ COPY provisioning/install-julia.sh provisioning/
 ENV \
     PATH="/opt/julia/bin:/opt/julia-1.12/bin:/opt/julia-1.11/bin:$PATH" \
     MANPATH="/opt/julia/share/man:$MANPATH" \
-    JULIA_SSL_CA_ROOTS_PATH="/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem" \
-    JULIA_CPU_TARGET="generic;sandybridge,-xsaveopt,clone_all;haswell,-rdrnd,base(1);x86-64-v4,-rdrnd,base(1)"
+    JULIA_SSL_CA_ROOTS_PATH="/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem"
 
 RUN true\
     && mkdir /opt/julia-local \
