@@ -31,7 +31,7 @@ ENV \
     MANPATH="/opt/julia/share/man:$MANPATH" \
     JULIA_SSL_CA_ROOTS_PATH="/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem"
 
-RUN provisioning/install-julia.sh 1.12.0 /opt/julia
+RUN provisioning/install-julia.sh 1.12.1 /opt/julia
 
 
 # Set up unpacked directory:
